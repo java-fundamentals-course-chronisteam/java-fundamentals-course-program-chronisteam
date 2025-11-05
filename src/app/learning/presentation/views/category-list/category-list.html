@@ -1,30 +1,43 @@
-<table mat-table [dataSource]="datasource()" matSort matSortActive="id"
-       matSortDirection="asc" matSortDisableClear>
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'categories.id' | translate}}</th>
-    <td mat-cell *matCellDef="let category">{{ category.id }}</td>
-  </ng-container>
+<div class="resource-container">
+  <!-- Columna izquierda: Video -->
+  <div class="column video-column">
+    <h2 class="section-title">Título del Capítulo</h2>
+    <div class="video-wrapper">
+      <iframe 
+        [src]="videoUrl" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="youtube-video">
+      </iframe>
+    </div>
+    <div class="transcription-section">
+      <h2 class="section-title">Transcripción</h2>
+      <div class="transcription-content">
+        <p>{{ transcription }}</p>
+      </div>
+    </div>
+  </div>
 
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'categories.name' | translate}}</th>
-    <td mat-cell *matCellDef="let category">{{ category.name }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef >{{ 'categories.actions' | translate}}</th>
-    <td mat-cell *matCellDef="let category">
-      <button mat-icon-button aria-label="{{ 'categories.edit' | translate }}"
-              (click)="editCategory(category.id)"><mat-icon>edit</mat-icon></button>
-      <button mat-icon-button aria-label="{{ 'categories.delete' | translate }}"
-              (click)="deleteCategory(category.id)"><mat-icon>delete</mat-icon></button>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-
-<button mat-raised-button color="primary"
-        (click)="navigateToNew()">{{ 'categories.new' | translate}}</button>
-
+  <!-- Columna derecha: Editor y Resultado -->
+  <div class="column editor-column">
+    <div class="editor-section">
+      <h2 class="section-title">Editor de Código</h2>
+      <div class="editor-wrapper">
+        <div class="code-editor-container">
+          <app-codemirror6
+            [(ngModel)]="code"
+            [extensions]="extensions"
+            (codeChange)="onCodeChange()">
+          </app-codemirror6>
+        </div>
+      </div>
+    </div>
+    <div class="result-section">
+      <h2 class="section-title">Resultado</h2>
+      <div class="result-output">
+        <pre>{{ result }}</pre>
+      </div>
+    </div>
+  </div>
+</div>

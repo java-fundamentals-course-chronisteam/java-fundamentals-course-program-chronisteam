@@ -1,9 +1,9 @@
 {
   "option": {
-    "home": "Home",
-    "about": "About",
-    "courses": "Courses",
-    "categories": "Categories"
+    "home": "Resource 1",
+    "about": "Resource 2",
+    "courses": "Resource 3",
+    "categories": "Resource 4"
   },
   "about": {
     "title": "About us",
@@ -22,6 +22,20 @@
     "rights": "All rights reserved",
     "powered-by": "Powered by",
     "and": "and"
+  },
+  "register": {
+    "contentTitle": "Learn with Academic",
+    "contentDescription": "Manage your learning with Academic. A platform designed to help you master the basics of programming effectively and systematically.",
+    "feature1": "Complete fundamentals of programming course: from basic concepts to practical projects.",
+    "feature2": "Personalized study plan with reminders and progress tracking.",
+    "feature3": "Practical exercises and real projects to reinforce your learning.",
+    "feature4": "Focused study mode with time tracking and unlockable achievements.",
+    "formTitle": "Create Account",
+    "formSubtitle": "Register on Academic",
+    "nameLabel": "Your name",
+    "nameRequired": "Name is required",
+    "nameMinLength": "Name must be at least 2 characters",
+    "continue": "Continue"
   },
   "categories": {
     "list-title": "Categories",

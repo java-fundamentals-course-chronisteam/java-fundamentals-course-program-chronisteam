@@ -1,12 +1,12 @@
-<mat-button-toggle-group [value]="currentLanguage"
-                         appearance="standard"
-                         aria-label="Preferred language"
-                         name="language">
+<div class="language-switcher">
   @for (language of languages; track language) {
-    <mat-button-toggle [value]="language"
-                       [aria-label]="language"
-                       (click)="useLanguage(language)">
-      {{ language.toUpperCase()}}
-    </mat-button-toggle>
+    <button 
+      class="language-button"
+      [class.active]="currentLanguage === language"
+      [attr.aria-label]="language"
+      (click)="useLanguage(language)">
+      <span class="language-text">{{ language.toUpperCase() }}</span>
+    </button>
   }
-</mat-button-toggle-group>
+  <div class="slider" [style.transform]="'translateX(' + (currentLanguage === 'en' ? 0 : 100) + '%)'"></div>
+</div>

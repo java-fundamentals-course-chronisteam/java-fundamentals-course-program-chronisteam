@@ -1,0 +1,74 @@
+.language-switcher {
+  position: relative;
+  display: inline-flex;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 4px;
+  gap: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.language-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666;
+  z-index: 2;
+  min-width: 50px;
+  outline: none;
+}
+
+.language-button:hover {
+  color: #1a1a1a;
+}
+
+.language-button.active {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.language-text {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: #1976d2;
+  border-radius: 6px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+}
+
+.language-button.active .language-text {
+  color: #ffffff;
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.language-switcher {
+  animation: slideIn 0.3s ease-out;
+}

@@ -1,4 +1,43 @@
-<div class="container-with-spacing">
-  <h1>{{ 'home.title' | translate  }}</h1>
-  <p>{{ 'home.content' | translate }}</p>
+<div class="resource-container">
+  <!-- Columna izquierda: Video -->
+  <div class="column video-column">
+    <h2 class="section-title">Título del Capítulo</h2>
+    <div class="video-wrapper">
+      <iframe 
+        [src]="videoUrl" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="youtube-video">
+      </iframe>
+    </div>
+    <div class="transcription-section">
+      <h2 class="section-title">Transcripción</h2>
+      <div class="transcription-content">
+        <p>{{ transcription }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Columna derecha: Editor y Resultado -->
+  <div class="column editor-column">
+    <div class="editor-section">
+      <h2 class="section-title">Editor de Código</h2>
+      <div class="editor-wrapper">
+        <div class="code-editor-container">
+          <app-codemirror6
+            [(ngModel)]="code"
+            [extensions]="extensions"
+            (codeChange)="onCodeChange()">
+          </app-codemirror6>
+        </div>
+      </div>
+    </div>
+    <div class="result-section">
+      <h2 class="section-title">Resultado</h2>
+      <div class="result-output">
+        <pre>{{ result }}</pre>
+      </div>
+    </div>
+  </div>
 </div>

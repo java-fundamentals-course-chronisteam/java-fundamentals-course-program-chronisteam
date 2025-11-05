@@ -1,9 +1,9 @@
 {
   "option": {
-    "home": "Inicio",
-    "about": "Acerca",
-    "courses": "Cursos",
-    "categories": "Categorias"
+    "home": "Resource 1",
+    "about": "Resource 2",
+    "courses": "Resource 3",
+    "categories": "Resource 4"
   },
   "about": {
     "title": "Acerca de nosotros",
@@ -22,5 +22,19 @@
     "rights": "Todos los derechos reservados",
     "powered-by": "Desarrollado con",
     "and": "y"
+  },
+  "register": {
+    "contentTitle": "Aprende con Academic",
+    "contentDescription": "Gestiona tu aprendizaje con Academic. Una plataforma diseñada para ayudarte a dominar las bases de la programación de manera efectiva y estructurada.",
+    "feature1": "Curso completo de fundamentos de programación: desde conceptos básicos hasta proyectos prácticos.",
+    "feature2": "Plan de estudio personalizado con recordatorios y seguimiento de progreso.",
+    "feature3": "Ejercicios prácticos y proyectos reales para reforzar tu aprendizaje.",
+    "feature4": "Modo de estudio enfocado con seguimiento de tiempo y logros desbloqueables.",
+    "formTitle": "Crear Cuenta",
+    "formSubtitle": "Regístrate en Academic",
+    "nameLabel": "Tu nombre",
+    "nameRequired": "El nombre es requerido",
+    "nameMinLength": "El nombre debe tener al menos 2 caracteres",
+    "continue": "Continuar"
   }
 }

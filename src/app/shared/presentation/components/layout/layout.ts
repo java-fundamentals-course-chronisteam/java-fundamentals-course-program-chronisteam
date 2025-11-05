@@ -1,23 +1,18 @@
 import { Component } from '@angular/core';
-import {MatToolbar, MatToolbarRow} from '@angular/material/toolbar';
 import {MatButton} from '@angular/material/button';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {TranslatePipe} from '@ngx-translate/core';
 import {LanguageSwitcher} from '../language-switcher/language-switcher';
-import {FooterContent} from '../footer-content/footer-content';
 
 @Component({
   selector: 'app-layout',
   imports: [
-    MatToolbar,
-    MatToolbarRow,
     MatButton,
     RouterLink,
     RouterLinkActive,
     TranslatePipe,
     LanguageSwitcher,
-    RouterOutlet,
-    FooterContent
+    RouterOutlet
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.css'
@@ -25,9 +20,9 @@ import {FooterContent} from '../footer-content/footer-content';
 export class Layout {
 
   options = [
-    {link: '/home', label: 'option.home'},
-    {link: '/about', label: 'option.about'},
-    {link: '/learning/categories', label: 'option.categories'},
-    {link: '/learning/courses', label: 'option.courses'}
+    {link: '/resource-1', label: 'option.home'},
+    {link: '/resource-2', label: 'option.about'},
+    {link: '/resource-3', label: 'option.courses'},
+    {link: '/resource-4', label: 'option.categories'}
   ]
 }

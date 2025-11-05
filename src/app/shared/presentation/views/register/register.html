@@ -1,0 +1,53 @@
+<div class="register-container">
+  <div class="register-layout">
+    <div class="content-section">
+      <div class="content-wrapper">
+        <h1 class="content-title">{{ 'register.contentTitle' | translate }}</h1>
+        <p class="content-description">{{ 'register.contentDescription' | translate }}</p>
+        <ul class="features-list">
+          <li>{{ 'register.feature1' | translate }}</li>
+          <li>{{ 'register.feature2' | translate }}</li>
+          <li>{{ 'register.feature3' | translate }}</li>
+          <li>{{ 'register.feature4' | translate }}</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <div class="register-card">
+        <div class="form-header">
+          <div class="form-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+              <circle cx="18" cy="8" r="4" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2 class="form-title">{{ 'register.formTitle' | translate }}</h2>
+          <p class="form-subtitle">{{ 'register.formSubtitle' | translate }}</p>
+        </div>
+        
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ 'register.nameLabel' | translate }}</mat-label>
+            <input matInput formControlName="name" autocomplete="name" autofocus>
+            @if (registerForm.get('name')?.touched && registerForm.get('name')!.hasError('required')) {
+              <mat-error>{{ 'register.nameRequired' | translate }}</mat-error>
+            }
+            @if (registerForm.get('name')?.touched && registerForm.get('name')!.hasError('minlength')) {
+              <mat-error>{{ 'register.nameMinLength' | translate }}</mat-error>
+            }
+          </mat-form-field>
+
+          <button 
+            mat-raised-button 
+            color="primary" 
+            type="submit" 
+            class="submit-button"
+            [disabled]="registerForm.invalid">
+            {{ 'register.continue' | translate }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
