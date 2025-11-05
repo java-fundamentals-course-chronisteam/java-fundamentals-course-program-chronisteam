@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslatePipe } from "@ngx-translate/core";
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Codemirror6Component } from '../../../../shared/presentation/components/codemirror6/codemirror6';
+import { Codemirror6Component } from '../../components/codemirror6/codemirror6';
 import { java } from '@codemirror/lang-java';
 import { EditorView } from '@codemirror/view';
 import { Extension } from '@codemirror/state';
