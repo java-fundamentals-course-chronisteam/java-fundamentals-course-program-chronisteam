@@ -28,6 +28,9 @@ body.dark-mode .sidebar {
   padding: 1.5rem 1.25rem;
   border-bottom: 1px solid #e0e0e0;
   transition: border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 body.dark-mode .sidebar-header {
@@ -47,12 +50,52 @@ body.dark-mode .sidebar-title {
   color: #e0e0e0;
 }
 
+.progress-panel {
+  background: #f5f5f5;
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .progress-panel {
+  background: #2a2a2a;
+}
+
+.progress-label {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .progress-label {
+  color: #c0c0c0;
+}
+
+.timer-display {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1976d2;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .timer-display {
+  color: #64b5f6;
+}
+
 .sidebar-nav {
   flex: 1;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  gap: 0.25rem;
 }
 
 .nav-link {
@@ -82,6 +125,16 @@ body.dark-mode .nav-link:hover {
   color: #e0e0e0;
 }
 
+.nav-link.locked {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+body.dark-mode .nav-link.locked {
+  opacity: 0.2;
+}
+
 .nav-link.active {
   background: #e3f2fd;
   color: #1976d2;
@@ -98,6 +151,9 @@ body.dark-mode .nav-link.active {
   padding: 1rem 1.25rem;
   border-top: 1px solid #e0e0e0;
   transition: border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 body.dark-mode .sidebar-footer {
@@ -108,6 +164,38 @@ body.dark-mode .sidebar-footer {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.unlock-button {
+  width: 100%;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(25, 118, 210, 0.25);
+}
+
+.unlock-button:hover {
+  background: #105c9c;
+}
+
+.unlock-button:active {
+  transform: translateY(1px);
+}
+
+body.dark-mode .unlock-button {
+  background: #64b5f6;
+  color: #0d1b2a;
+  box-shadow: 0 2px 6px rgba(100, 181, 246, 0.35);
+}
+
+body.dark-mode .unlock-button:hover {
+  background: #4a9fdc;
 }
 
 .theme-toggle-button {

@@ -1,22 +1,43 @@
 <div class="layout-container">
   <aside class="sidebar">
     <div class="sidebar-header">
-      <h1 class="sidebar-title">ACME Learning Center</h1>
+      <h1 class="sidebar-title">{{ sidebarTitle() }}</h1>
+      @if (!allResourcesUnlocked()) {
+        <div class="progress-panel">
+          <p class="progress-label">Siguiente recurso en:</p>
+          <div class="timer-display">{{ formattedTimeLeft() }}</div>
+        </div>
+      } @else {
+        <div class="progress-panel">
+          <p class="progress-label">Todos los recursos disponibles</p>
+        </div>
+      }
     </div>
     
     <nav class="sidebar-nav">
-      @for (option of options; track option.label) {
+      @for (option of options; track option.label; let idx = $index) {
         <a 
           mat-button 
           [routerLink]="option.link" 
           routerLinkActive="active"
-          class="nav-link">
+          class="nav-link"
+          [class.locked]="isResourceLocked(idx)"
+          [attr.aria-disabled]="isResourceLocked(idx) ? true : null"
+          [tabIndex]="isResourceLocked(idx) ? -1 : 0">
           {{ option.label | translate }}
         </a>
       }
     </nav>
     
     <div class="sidebar-footer">
+      @if (shouldShowContinueButton()) {
+        <button 
+          class="unlock-button" 
+          type="button"
+          (click)="onContinueToNextResource()">
+          Continuar al siguiente recurso
+        </button>
+      }
       <div class="footer-controls">
         <app-language-switcher/>
         <button 

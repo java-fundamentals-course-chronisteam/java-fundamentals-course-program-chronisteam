@@ -1,7 +1,7 @@
 <div class="resource-container">
   <!-- Columna izquierda: Video -->
   <div class="column video-column">
-    <h2 class="section-title">Título del Capítulo</h2>
+    <h2 class="section-title">Entrada/salida con Scanner, Arreglos simples o cadenas.</h2>
     <div class="video-wrapper">
       <iframe 
         [src]="videoUrl" 
@@ -11,6 +11,13 @@
         class="youtube-video">
       </iframe>
     </div>
+    <a 
+      class="video-link"
+      href="https://youtu.be/1pJv1WWjRPU"
+      target="_blank"
+      rel="noopener noreferrer">
+      Ver en YouTube
+    </a>
     <div class="transcription-section">
       <h2 class="section-title">Transcripción</h2>
       <div class="transcription-content">
@@ -19,7 +26,7 @@
     </div>
   </div>
 
-  <!-- Columna derecha: Editor y Resultado -->
+  <!-- Columna derecha: Editor -->
   <div class="column editor-column">
     <div class="editor-section">
       <h2 class="section-title">Editor de Código</h2>
@@ -31,12 +38,6 @@
             (codeChange)="onCodeChange()">
           </app-codemirror6>
         </div>
-      </div>
-    </div>
-    <div class="result-section">
-      <h2 class="section-title">Resultado</h2>
-      <div class="result-output">
-        <pre>{{ result }}</pre>
       </div>
     </div>
   </div>

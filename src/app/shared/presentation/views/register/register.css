@@ -1,7 +1,10 @@
 .register-container {
   min-height: 100vh;
   background: #f5f5f5;
-  padding: 0;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s ease;
 }
 
@@ -9,93 +12,15 @@ body.dark-mode .register-container {
   background: #121212;
 }
 
-.register-layout {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  min-height: 100vh;
-  gap: 0;
-}
-
-.content-section {
-  display: flex;
-  align-items: center;
-  padding: 3rem 4rem;
-  background: #f5f5f5;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-mode .content-section {
-  background: #121212;
-}
-
-.content-wrapper {
-  max-width: 600px;
-}
-
-.content-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 2rem 0;
-  line-height: 1.2;
-  transition: color 0.3s ease;
-}
-
-body.dark-mode .content-title {
-  color: #e0e0e0;
-}
-
-.content-description {
-  font-size: 1.1rem;
-  color: #333;
-  margin: 0 0 2rem 0;
-  line-height: 1.6;
-  transition: color 0.3s ease;
-}
-
-body.dark-mode .content-description {
-  color: #b0b0b0;
-}
-
-.features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.features-list li {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
-  line-height: 1.6;
-  transition: color 0.3s ease;
-}
-
-body.dark-mode .features-list li {
-  color: #b0b0b0;
-}
-
-.features-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #666;
-  font-size: 1.2rem;
-}
-
 .form-section {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background: #f5f5f5;
-  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .form-section {
-  background: #121212;
+  background: transparent;
 }
 
 .register-card {
@@ -182,29 +107,7 @@ body.dark-mode .form-subtitle {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .register-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .content-section {
-    padding: 2rem;
-  }
-
-  .form-section {
-    padding: 2rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .content-title {
-    font-size: 2rem;
-  }
-
-  .content-section {
-    padding: 1.5rem;
-  }
-
   .register-card {
     padding: 2rem 1.5rem;
   }
