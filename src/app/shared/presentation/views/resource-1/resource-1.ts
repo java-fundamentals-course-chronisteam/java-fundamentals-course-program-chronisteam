@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { TranslatePipe } from "@ngx-translate/core";
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,8 @@ import { closeBrackets, closeBracketsKeymap } from '@codemirror/autocomplete';
 import { lineNumbers, highlightActiveLine, keymap } from '@codemirror/view';
 import { syntaxHighlighting, HighlightStyle } from '@codemirror/language';
 import { tags } from '@lezer/highlight';
+import lottie from 'lottie-web';
+import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-resource-1',
@@ -26,10 +28,12 @@ import { tags } from '@lezer/highlight';
   templateUrl: './resource-1.html',
   styleUrl: './resource-1.css'
 })
-export class Resource1 {
+export class Resource1 implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('lottieContainer', { static: false }) lottieContainer!: ElementRef;
   code: string = '';
   result: string = 'Escribe código en el editor para ver los resultados aquí...';
   videoUrl: SafeResourceUrl;
+  private animationItem: AnimationItem | null = null;
   exampleCode: string = `// Ejemplo de código JavaScript
 function saludar(nombre) {
   return "¡Hola, " + nombre + "!";
@@ -184,6 +188,46 @@ public class Main {
   constructor(private sanitizer: DomSanitizer) {
     const url = `https://www.youtube.com/embed/${this.videoId}`;
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  ngOnInit(): void {
+    // La animación se carga en ngAfterViewInit
+  }
+
+  ngAfterViewInit(): void {
+    if (this.lottieContainer) {
+      const container = this.lottieContainer.nativeElement;
+      container.style.width = '300px';
+      container.style.height = '300px';
+      
+      this.animationItem = lottie.loadAnimation({
+        container: container,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/i18n/STUDENT.json',
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid meet'
+        }
+      });
+      
+      // Asegurar que el SVG tenga el tamaño correcto
+      setTimeout(() => {
+        const svg = container.querySelector('svg');
+        if (svg) {
+          svg.style.width = '250px';
+          svg.style.height = '250px';
+          svg.style.transform = 'scale(1)';
+          svg.style.transformOrigin = 'center center';
+        }
+      }, 100);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.animationItem) {
+      this.animationItem.destroy();
+    }
   }
 
   showNextExercise() {
