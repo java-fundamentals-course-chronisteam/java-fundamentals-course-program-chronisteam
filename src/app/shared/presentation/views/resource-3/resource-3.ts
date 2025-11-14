@@ -43,6 +43,8 @@ function saludar(nombre) {
 
 console.log(saludar("Mundo"));
 // Resultado: ¡Hola, Mundo!`;
+  readonly videoId = 'aToAE5dtBlw';
+  readonly videoLink = `https://youtu.be/${this.videoId}`;
 
   readonly exercises = [
     {
@@ -322,8 +324,7 @@ public class ArregloNombres {
     private sanitizer: DomSanitizer,
     private translate: TranslateService
   ) {
-    const videoId = 'koyu8qYot_Y';
-    const url = `https://www.youtube.com/embed/${videoId}`;
+    const url = `https://www.youtube.com/embed/${this.videoId}`;
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
     this.updateResultMessage();
   }

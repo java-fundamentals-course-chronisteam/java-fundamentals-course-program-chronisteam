@@ -50,11 +50,153 @@ console.log(saludar("Mundo"));
     {
       title: 'resources.exercise1',
       code: `public class Main {
-    public static void main(String[] args) {
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Número: " + i);
-        }
+
+  public static void main(String[] args) {
+
+    int a = 10;
+
+    int b = 3;
+
+
+
+    int suma = a + b;
+
+    int resta = a - b;
+
+    int multiplicacion = a * b;
+
+    int division = a / b;
+
+    int resto = a % b;
+
+
+
+    System.out.println("Suma: " + suma);
+
+    System.out.println("Resta: " + resta);
+
+    System.out.println("Multiplicación: " + multiplicacion);
+
+    System.out.println("División: " + division);
+
+    System.out.println("Resto: " + resto);
+
+
+
+    boolean esMayor = a > b;
+
+    boolean esIgual = a == b;
+
+
+
+    System.out.println("¿a es mayor que b? " + esMayor);
+
+    System.out.println("¿a es igual a b? " + esIgual);
+
+
+
+    System.out.println("---------------------------------------");
+
+
+
+    int nota = 15; 
+
+    if (nota >= 11){
+
+      System.out.println("Aprobaste");
+
+    }else{
+
+      System.out.println("Desaprobaste");
+
     }
+
+
+
+    System.out.println("---------------------------------------");
+
+
+
+    int edad = 16;
+
+    if(edad >= 18){
+
+      System.out.println("Eres mayor de edad");
+
+    }else if(edad >= 13){
+
+      System.out.println("Eres adolescente");
+
+    }else{
+
+      System.out.println("Eres niño");
+
+    }
+
+
+
+    System.out.println("---------------------------------------");
+
+    
+
+    for (int i = 1; i <= 10; i++){
+
+      System.out.println("Vuelta numero: " + i);
+
+    }
+
+
+
+    System.out.println("---------------------------------------");
+
+
+
+    int contador = 1;
+
+    while (contador <= 3){
+
+    System.out.println("Intento: " + contador);
+
+    contador = contador + 1;
+
+    }
+
+
+
+    System.out.println("---------------------------------------");
+
+      saludar("Snay");
+
+      saludar("Alberto");
+
+
+
+      int resultado = sumar(5, 7);
+
+      System.out.println("La suma es: " + resultado);
+
+    }
+
+
+
+    static void saludar(String nombre){
+
+      System.out.println("Hola " + nombre + ", bienvenido al curso de Java");
+
+    }
+
+
+
+    static int sumar(int a, int b){
+
+      int respuesta = a + b;
+
+      return respuesta;
+
+    }
+
+    
+
 }`
     },
     {
