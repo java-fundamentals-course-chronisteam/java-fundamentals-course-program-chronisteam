@@ -10,7 +10,7 @@
   "page-not-found": {
     "title": "Pàgina no encontrada",
     "content": "La ruta <strong>{{ invalidPath }}</strong> es invàlida",
-    "go-home": "Ir al inicio"
+    "go-home": "Ir a Resource 1"
   },
   "sidebar": {
     "nextResourceIn": "Siguiente recurso en:",

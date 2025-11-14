@@ -10,7 +10,7 @@
   "page-not-found": {
     "title": "Page not found",
     "content": "The path <strong>{{ invalidPath }}</strong> is not valid",
-    "go-home": "Go home"
+    "go-home": "Go Resource 1"
   },
   "sidebar": {
     "nextResourceIn": "Next resource in:",
