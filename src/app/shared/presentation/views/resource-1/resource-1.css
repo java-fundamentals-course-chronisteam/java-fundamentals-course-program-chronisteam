@@ -172,6 +172,48 @@ body.dark-mode .section-title {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(25, 118, 210, 0.6) rgba(25, 118, 210, 0.1);
+}
+
+.exercise-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.exercise-list::-webkit-scrollbar-thumb {
+  background: rgba(25, 118, 210, 0.6);
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.exercise-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(25, 118, 210, 0.8);
+  background-clip: padding-box;
+}
+
+.exercise-list::-webkit-scrollbar-track {
+  background: rgba(25, 118, 210, 0.1);
+  border-radius: 999px;
+}
+
+body.dark-mode .exercise-list {
+  scrollbar-color: rgba(100, 181, 246, 0.7) rgba(100, 181, 246, 0.1);
+}
+
+body.dark-mode .exercise-list::-webkit-scrollbar-thumb {
+  background: rgba(100, 181, 246, 0.7);
+  background-clip: padding-box;
+}
+
+body.dark-mode .exercise-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 181, 246, 0.9);
+  background-clip: padding-box;
+}
+
+body.dark-mode .exercise-list::-webkit-scrollbar-track {
+  background: rgba(100, 181, 246, 0.15);
 }
 
 .exercise-card {
@@ -180,7 +222,7 @@ body.dark-mode .section-title {
   border-radius: 12px;
   padding: 1rem;
   min-height: 240px;
-  height: auto;
+  height: 240px;
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: row;

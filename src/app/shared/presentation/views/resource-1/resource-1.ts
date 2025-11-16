@@ -36,70 +36,69 @@ export class Resource1 implements OnInit, AfterViewInit, OnDestroy {
   videoUrl: SafeResourceUrl;
   private animationItem: AnimationItem | null = null;
   private langChangeSubscription?: Subscription;
-  exampleCode: string = `// Ejemplo de código JavaScript
-function saludar(nombre) {
-  return "¡Hola, " + nombre + "!";
-}
+  exampleCode: string = `public class HolaMundo {
 
-console.log(saludar("Mundo"));
-// Resultado: ¡Hola, Mundo!`;
-  readonly videoId = 'y71frNkA6vk';
+    public static void main(String[] args) {
+
+        // Creamos nuestras variables
+
+        int edad = 16;
+
+        double altura = 1.70;
+
+        String nombre = "Ana";
+
+        boolean esEstudiante = true;
+
+
+
+        // Mostramos el contenido de las variables
+
+        System.out.println("Hola, me llamo " + nombre);
+
+        System.out.println("Tengo " + edad + " años.");
+
+        System.out.println("Mido " + altura + " metros.");
+
+        System.out.println("¿Soy estudiante? " + esEstudiante);
+
+    }
+
+}`;
+  readonly videoId = 'z1kceDbTBvo';
   readonly videoLink = `https://youtu.be/${this.videoId}`;
 
   readonly exercises = [
     {
       title: 'resources.exercise1',
-      code: `import java.util.Scanner;
+      code: `public class HolaMundo {
 
-public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingresa tu edad: ");
-        int edad = scanner.nextInt();
+        // Creamos nuestras variables
 
-        System.out.println("En 5 años tendrás: " + (edad + 5));
-        scanner.close();
+        int edad = 16;
+
+        double altura = 1.70;
+
+        String nombre = "Ana";
+
+        boolean esEstudiante = true;
+
+
+
+        // Mostramos el contenido de las variables
+
+        System.out.println("Hola, me llamo " + nombre);
+
+        System.out.println("Tengo " + edad + " años.");
+
+        System.out.println("Mido " + altura + " metros.");
+
+        System.out.println("¿Soy estudiante? " + esEstudiante);
+
     }
-}`
-    },
-    {
-      title: 'resources.exercise2',
-      code: `public class Main {
-    public static void main(String[] args) {
-        String lenguaje = "Java";
-        String mensaje = String.format("Aprender %s es divertido.", lenguaje);
 
-        System.out.println(mensaje);
-    }
-}`
-    },
-    {
-      title: 'resources.exercise3',
-      code: `public class Main {
-    public static void main(String[] args) {
-        double precio = 19.99;
-        int cantidad = 3;
-
-        double total = precio * cantidad;
-        System.out.println("Total a pagar: " + total);
-    }
-}`
-    },
-    {
-      title: 'resources.exercise4',
-      code: `import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingresa tu nombre: ");
-        String nombre = scanner.nextLine();
-
-        System.out.println("Hola " + nombre + ", ¡este es tu primer programa en Java!");
-        scanner.close();
-    }
 }`
     }
   ];
