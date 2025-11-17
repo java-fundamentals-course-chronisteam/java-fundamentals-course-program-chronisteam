@@ -65,7 +65,7 @@ export class Resource1 implements OnInit, AfterViewInit, OnDestroy {
     }
 
 }`;
-  readonly videoId = 'z1kceDbTBvo';
+  readonly videoId = 'prrAjmJ7wlY';
   readonly videoLink = `https://youtu.be/${this.videoId}`;
 
   readonly exercises = [
